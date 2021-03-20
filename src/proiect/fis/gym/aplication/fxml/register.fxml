@@ -20,17 +20,53 @@
 
     <Label text="Select role:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
 
-    <ChoiceBox fx:id="selectRole" GridPane.columnIndex="1" GridPane.rowIndex="1">
+    <ChoiceBox fx:id="selectRole" value="Customer" GridPane.columnIndex="1" GridPane.rowIndex="1">
         <items>
             <FXCollections fx:factory="observableArrayList">
                 <String fx:value="Customer" />
-                <String fx:value="GymManager" />
+                <String fx:value="Gym Manager" />
             </FXCollections>
         </items>
     </ChoiceBox>
 
     <HBox alignment="bottom_right" spacing="1000" GridPane.columnIndex="2" GridPane.rowIndex="1">
         <Button onAction="#handleChooseButton" text="Choose"/>
+    </HBox>
+
+    <Label text="Username:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+
+    <TextField fx:id="usernameField" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+    <Label text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+
+    <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+    <Label text="Age:" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+
+    <TextField fx:id="ageField" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+
+    <Label text="Phone number:" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+
+    <TextField fx:id="phoneField" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+
+    <Label text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="6"/>
+
+    <TextField fx:id="emailField" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+
+    <Label text="First name: " GridPane.columnIndex="0" GridPane.rowIndex="7"/>
+
+    <TextField fx:id="firstNameField" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+
+    <Label text="Last name:" GridPane.columnIndex="0" GridPane.rowIndex="8"/>
+
+    <TextField fx:id="lastNameField" GridPane.columnIndex="1" GridPane.rowIndex="8"/>
+
+    <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="9">
+        <Button onAction="#handleSubmitRegistrationButton" text="Submit registration"/>
+    </HBox>
+
+    <HBox alignment="bottom_left" spacing="10" GridPane.columnIndex="0" GridPane.rowIndex="9">
+        <Button onAction="#handleBackToLoginButton" text="Back to login"/>
     </HBox>
 
 </GridPane>

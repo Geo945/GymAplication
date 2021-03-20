@@ -7,12 +7,20 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import sun.security.util.Password;
 
 import java.io.IOException;
 
 public class RegisterController {
 
+    @FXML
     public ChoiceBox selectRole;
+
+    @FXML
+    public TextField usernameField, ageField, phoneField, emailField, firstNameField, lastNameField;
+
+    @FXML
+    public PasswordField passwordField;
 
     @FXML
     public void handleChooseButton(){
@@ -20,23 +28,39 @@ public class RegisterController {
         if( role.equals("Customer") ) {
             try {
                 Stage stage = (Stage) selectRole.getScene().getWindow();
-                Parent viewRegisterRoot = FXMLLoader.load(getClass().getResource("../fxml/registerCustomer.fxml"));
-                Scene scene = new Scene(viewRegisterRoot, 600, 400);
+                Parent viewRegisterRoot = FXMLLoader.load(getClass().getResource("../fxml/register.fxml"));
+                Scene scene = new Scene(viewRegisterRoot, 600, 500);
                 stage.setScene(scene);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
 
-        if( role.equals("GymManager") ) {
+        if( role.equals("Gym Manager") ) {
             try {
                 Stage stage = (Stage) selectRole.getScene().getWindow();
                 Parent viewRegisterRoot = FXMLLoader.load(getClass().getResource("../fxml/registerManager.fxml"));
-                Scene scene = new Scene(viewRegisterRoot, 600, 400);
+                Scene scene = new Scene(viewRegisterRoot, 600, 500);
                 stage.setScene(scene);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
     }
+
+    public void handleSubmitRegistrationButton(){
+
+    }
+
+    public void handleBackToLoginButton(){
+        try {
+            Stage stage = (Stage) selectRole.getScene().getWindow();
+            Parent viewRegisterRoot = FXMLLoader.load(getClass().getResource("../fxml/login.fxml"));
+            Scene scene = new Scene(viewRegisterRoot, 600, 400);
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
