@@ -7,12 +7,14 @@ public class Customer {
     private String lastName;
     private int age;
     private String phoneNumber;
+    private String email;
 
-    public Customer(String firstName, String lastName, int age, String phoneNumber) {
+    public Customer(String firstName, String lastName, int age, String phoneNumber,String email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
         this.phoneNumber = phoneNumber;
+        this.email=email;
     }
 
     @Override
@@ -22,6 +24,7 @@ public class Customer {
                 ", lastName='" + lastName + '\'' +
                 ", age=" + age +
                 ", phoneNumber='" + phoneNumber + '\'' +
+                ", email= ' " + email + '\'' +
                 '}';
     }
 
@@ -30,11 +33,11 @@ public class Customer {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Customer customer = (Customer) o;
-        return age == customer.age && Objects.equals(firstName, customer.firstName) && Objects.equals(lastName, customer.lastName) && Objects.equals(phoneNumber, customer.phoneNumber);
+        return age == customer.age && Objects.equals(firstName, customer.firstName) && Objects.equals(lastName, customer.lastName) && Objects.equals(phoneNumber, customer.phoneNumber) && Objects.equals(email, customer.email);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(firstName, lastName, age, phoneNumber);
+        return Objects.hash(firstName, lastName, age, phoneNumber, email);
     }
 }

@@ -20,12 +20,12 @@
 
     <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
 
-    <HBox alignment="bottom_center" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="3">
-        <Button text="Register"/>
-    </HBox>
-
     <HBox alignment="bottom_left" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="3">
         <Button onAction="#handleLoginButton" text="Login"/>
+    </HBox>
+
+    <HBox alignment="bottom_center" spacing="1000" GridPane.columnIndex="1" GridPane.rowIndex="3">
+        <Button onAction="#handleRegisterButton" text="Register"/>
     </HBox>
 
     <Text fx:id="loginMessage" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
