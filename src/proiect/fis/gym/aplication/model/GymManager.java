@@ -17,6 +17,18 @@ public class GymManager {
         this.companyName = companyName;
     }
 
+    public String getFirstName() { return firstName; }
+    public String getLastName() { return lastName; }
+    public int getAge() { return age; }
+    public String getGymLocation() { return gymLocation; }
+    public String getCompanyName() { return companyName; }
+
+    public void setFirstName(String firstName) { this.firstName = firstName; }
+    public void setLastName(String lastName) { this.lastName = lastName; }
+    public void setAge(int age) { this.age = age; }
+    public void setGymLocation(String gymLocation) { this.gymLocation = gymLocation; }
+    public void setCompanyName(String companyName) { this.companyName = companyName; }
+
     @Override
     public String toString() {
         return "GymManager{" +
