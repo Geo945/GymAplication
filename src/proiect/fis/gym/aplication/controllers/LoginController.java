@@ -24,8 +24,8 @@ public class LoginController {
     public void handleRegisterButton(){
         try {
             Stage stage =(Stage) loginMessage.getScene().getWindow();
-            Parent viewRegisterRoot = FXMLLoader.load(getClass().getResource("../fxml/register.fxml"));
-            Scene scene = new Scene(viewRegisterRoot, 600, 400);
+            Parent viewRegisterRoot = FXMLLoader.load(getClass().getResource("../fxml/registerCustomer.fxml"));
+            Scene scene = new Scene(viewRegisterRoot, 700, 500);
             stage.setScene(scene);
         } catch (IOException e) {
             e.printStackTrace();
