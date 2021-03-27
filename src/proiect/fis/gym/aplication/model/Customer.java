@@ -5,30 +5,87 @@ import java.util.Objects;
 public class Customer {
     private String firstName;
     private String lastName;
-    private int age;
+    private String age;
     private String phoneNumber;
     private String email;
+    private String username;
+    private String password;
+    private String role;
 
-    public Customer(String firstName, String lastName, int age, String phoneNumber,String email) {
+    public Customer(String firstName, String lastName, String age, String phoneNumber, String email, String username, String password, String role) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
         this.phoneNumber = phoneNumber;
-        this.email=email;
+        this.email = email;
+        this.username = username;
+        this.password = password;
+        this.role = role;
     }
 
-    public void setfirstName(String firstName) { this.firstName=firstName; }
-    public void setlastName(String lastName) { this.lastName=lastName; }
-    public void setAge(int age){this.age=age;}
-    public void setPhone(String phoneNumber) { this.phoneNumber=phoneNumber; }
-    public void setEmail(String email) { this.email=email; }
+    public String getFirstName() {
+        return firstName;
+    }
 
-    public String getFirstName() { return firstName; }
-    public String getLastName() { return lastName; }
-    public int getAge() { return age; }
-    public String getPhoneNumber() { return phoneNumber; }
-    public String email() { return email; }
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
 
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getAge() {
+        return age;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
 
     @Override
     public String toString() {
@@ -37,7 +94,10 @@ public class Customer {
                 ", lastName='" + lastName + '\'' +
                 ", age=" + age +
                 ", phoneNumber='" + phoneNumber + '\'' +
-                ", email= ' " + email + '\'' +
+                ", email='" + email + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", role='" + role + '\'' +
                 '}';
     }
 
@@ -46,11 +106,11 @@ public class Customer {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Customer customer = (Customer) o;
-        return age == customer.age && Objects.equals(firstName, customer.firstName) && Objects.equals(lastName, customer.lastName) && Objects.equals(phoneNumber, customer.phoneNumber) && Objects.equals(email, customer.email);
+        return Objects.equals(age, customer.age) && Objects.equals(firstName, customer.firstName) && Objects.equals(lastName, customer.lastName) && Objects.equals(phoneNumber, customer.phoneNumber) && Objects.equals(email, customer.email) && Objects.equals(username, customer.username) && Objects.equals(password, customer.password) && Objects.equals(role, customer.role);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(firstName, lastName, age, phoneNumber, email);
+        return Objects.hash(firstName, lastName, age, phoneNumber, email, username, password, role);
     }
 }
